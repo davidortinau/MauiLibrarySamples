@@ -16,11 +16,16 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	
+		<PackageId>Ortinau.Maui.SampleLib</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>David Ortinau</Authors>
+		<Company>Ortinau</Company>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Fonts\DMSans-Bold.ttf" />
-	  <None Remove="Resources\Images\shutterstock_183490631.svg" />
+		<Content Include="**\*.xaml" Pack="true" PackagePath="content" />
+		<Content Include="**\*.xaml.cs" Pack="true" PackagePath="content" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -44,11 +49,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiFont Include="Resources\Fonts\DMSans-Bold.ttf" />
+	  <MauiFont Include="Resources\Fonts\DMSans-Bold.ttf" Pack="True" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiImage Include="Resources\Images\shutterstock_183490631.svg" />
+	  <MauiImage Include="Resources\Images\shutterstock_183490631.svg" Pack="True" />
 	</ItemGroup>
+
+	<Import Project="PackMauiAssets.targets" />
 
 </Project>

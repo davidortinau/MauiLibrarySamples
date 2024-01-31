@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyMauiAppWithNuGet.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label Text="Hello from My Styles (and assets) Library. This font comes from the library project"
+                   FontFamily="SharedDMSans"/>
+            <Label Text="This image exists in the library, but is referenced in the app project"/>
+            <Image Source="shutterstock_183490631.png" HeightRequest="100"/>
+            
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
